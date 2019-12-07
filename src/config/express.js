@@ -1,4 +1,5 @@
 const express = require('express')
+const serverless = require('serverless-http')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const compress = require('compression')
@@ -48,3 +49,4 @@ app.use(error.notFound)
 app.use(error.handler)
 
 module.exports = app
+module.exports.handler = serverless(app)
