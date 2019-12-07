@@ -1,5 +1,6 @@
 // make bluebird default Promise
 Promise = require('bluebird') // eslint-disable-line no-global-assign
+const serverless = require('serverless-http')
 const app = require('./config/express')
 
 // listen to requests
@@ -10,3 +11,4 @@ app.listen(80)
  * @public
  */
 module.exports = app
+module.exports.handler = serverless(app)

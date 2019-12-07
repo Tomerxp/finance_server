@@ -1,5 +1,4 @@
 const express = require('express')
-const serverless = require('serverless-http')
 const bodyParser = require('body-parser')
 const compress = require('compression')
 const methodOverride = require('method-override')
@@ -46,4 +45,3 @@ app.use(error.notFound)
 app.use(error.handler)
 
 module.exports = app
-module.exports.handler = serverless(app)
